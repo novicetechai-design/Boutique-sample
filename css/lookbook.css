@@ -1,0 +1,431 @@
+/**
+ * ==============================================================================
+ * LOOKBOOK & EDITORIAL GALLERY STYLES (css/lookbook.css)
+ * ==============================================================================
+ * Asymmetric fashion magazine masonry grid, hover image zoom,
+ * gold hairline accents, and accessible full-screen lightbox modal.
+ * ==============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+ * 1. SECTION CONTAINER
+ * ---------------------------------------------------------------------------- */
+.lookbook-section {
+  position: relative;
+  padding-block: var(--space-section);
+  background-color: var(--color-bg-alt);
+}
+
+/* ----------------------------------------------------------------------------
+ * 2. ASYMMETRIC EDITORIAL GRID (DESKTOP)
+ * ---------------------------------------------------------------------------- */
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.25rem, 1rem + 1vw, 2rem);
+}
+
+/* ----------------------------------------------------------------------------
+ * 3. LOOKBOOK CARD
+ * ---------------------------------------------------------------------------- */
+.lookbook-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-dark);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: block;
+  border: 1px solid var(--color-border-light);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+/* Asymmetrical Magazine Layout Spans */
+.lookbook-card:nth-child(1) {
+  grid-column: span 7;
+  min-height: 480px;
+}
+
+.lookbook-card:nth-child(2) {
+  grid-column: span 5;
+  min-height: 480px;
+}
+
+.lookbook-card:nth-child(3) {
+  grid-column: span 4;
+  min-height: 440px;
+}
+
+.lookbook-card:nth-child(4) {
+  grid-column: span 4;
+  min-height: 440px;
+}
+
+.lookbook-card:nth-child(5) {
+  grid-column: span 4;
+  min-height: 440px;
+}
+
+.lookbook-card:nth-child(6) {
+  grid-column: span 12;
+  min-height: 380px;
+}
+
+/* Fallback for additional dynamic items */
+.lookbook-card:nth-child(n+7) {
+  grid-column: span 6;
+  min-height: 400px;
+}
+
+.lookbook-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-accent);
+}
+
+/* Clean subtle card boundary */
+.lookbook-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-border-light);
+  border-radius: inherit;
+  z-index: 3;
+  pointer-events: none;
+  transition: border-color var(--transition-base);
+}
+
+.lookbook-card:hover::after {
+  border-color: var(--color-border-accent);
+}
+
+/* Image Presentation & Zoom */
+.lookbook-card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.lookbook-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lookbook-card:hover .lookbook-card-img {
+  transform: scale(1.045);
+}
+
+/* Dark Vignette Overlay */
+.lookbook-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 18, 16, 0.1) 0%,
+    rgba(20, 18, 16, 0.3) 40%,
+    rgba(14, 12, 11, 0.92) 100%
+  );
+  transition: background var(--transition-base);
+}
+
+.lookbook-card:hover .lookbook-card-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 18, 16, 0.05) 0%,
+    rgba(20, 18, 16, 0.2) 30%,
+    rgba(14, 12, 11, 0.95) 100%
+  );
+}
+
+/* Card Content Overlay */
+.lookbook-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(1.25rem, 1rem + 1vw, 2rem);
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.lookbook-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lookbook-card-cat {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--color-accent);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 0.25rem;
+}
+
+.lookbook-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.65rem);
+  font-weight: var(--fw-normal);
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.lookbook-expand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(28, 25, 23, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.lookbook-expand-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.lookbook-card:hover .lookbook-expand-icon {
+  transform: scale(1.1);
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4. ACCESSIBLE FULL-SCREEN LIGHTBOX MODAL
+ * ---------------------------------------------------------------------------- */
+.lightbox-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 9, 8, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.96) translateY(12px);
+  transition: transform var(--transition-slow);
+}
+
+.lightbox-backdrop.is-active .lightbox-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -3.5rem;
+  right: 0;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-xs);
+  color: #FFFFFF;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.lightbox-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.lightbox-media-wrap {
+  width: 100%;
+  max-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--color-bg-dark);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Lightbox Prev / Next Nav Buttons */
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.lightbox-nav-btn:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev {
+  left: -1.5rem;
+}
+
+.lightbox-next {
+  right: -1.5rem;
+}
+
+/* Lightbox Info Bar */
+.lightbox-info {
+  width: 100%;
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #FFFFFF;
+  gap: 1.5rem;
+}
+
+.lightbox-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-normal);
+  color: #FFFFFF;
+}
+
+.lightbox-cat {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.lightbox-desc {
+  font-size: var(--fs-xs);
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-top: 0.35rem;
+  max-width: 600px;
+}
+
+.lightbox-counter {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  color: var(--color-accent);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+}
+
+/* ----------------------------------------------------------------------------
+ * 5. RESPONSIVE MEDIA QUERIES (TABLET & MOBILE)
+ * ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .lookbook-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .lookbook-card:nth-child(n) {
+    grid-column: span 1;
+    min-height: 420px;
+  }
+
+  .lookbook-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox-next {
+    right: 0.5rem;
+  }
+
+  .lightbox-close-btn {
+    top: -3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .lookbook-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .lookbook-card:nth-child(n) {
+    grid-column: span 1;
+    min-height: 380px;
+  }
+
+  .lookbook-card-content {
+    padding: 1.25rem;
+  }
+
+  .lightbox-dialog {
+    padding-inline: 0.5rem;
+  }
+
+  .lightbox-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

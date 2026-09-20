@@ -1,0 +1,66 @@
+/**
+ * ==============================================================================
+ * MAIN STYLESHEET AGGREGATOR
+ * ==============================================================================
+ * Imports all modular CSS layers in proper cascade order.
+ * 
+ * Cascade Order:
+ * 1. Design Tokens / Custom Properties (variables.css)
+ * 2. CSS Reset (reset.css)
+ * 3. Base Elements & Typography (base.css)
+ * 4. Utilities & Helpers (utilities.css)
+ * 5. Component Styles:
+ *    - header.css
+ *    - hero.css
+ *    - collections.css
+ *    - catalog.css
+ *    - about.css
+ *    - lookbook.css
+ *    - testimonials.css
+ * ==============================================================================
+ */
+
+
+@import url('./variables.css');
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./utilities.css');
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./collections.css');
+@import url('./catalog.css');
+@import url('./about.css');
+@import url('./lookbook.css');
+@import url('./testimonials.css');
+@import url('./theme-overrides.css');
+@import url('./interactive-3d.css');
+
+
+/* ----------------------------------------------------------------------------
+ * FOOTER FOUNDATION STYLES
+ * ---------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  padding-block: var(--space-3xl) var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-xs);
+  color: var(--color-text-light);
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+}

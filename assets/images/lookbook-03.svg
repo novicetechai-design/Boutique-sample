@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lb3Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="60%" stop-color="#F2EDE4"/>
+      <stop offset="100%" stop-color="#EAE5DB"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#lb3Bg)"/>
+  <rect x="30" y="30" width="540" height="740" fill="none" stroke="#DCD6CA" stroke-width="1"/>
+
+  <!-- Minimalist Figure Editorial: Look 03 (Neutral Form) -->
+  <ellipse cx="300" cy="180" rx="24" ry="32" fill="#E8DED1"/>
+  <path d="M280 160 C280 130, 320 130, 320 160 C320 200, 310 220, 305 230 L295 230 C290 220, 280 200, 280 160 Z" fill="#2C2A29"/>
+  <line x1="300" y1="212" x2="300" y2="240" stroke="#E8DED1" stroke-width="8"/>
+
+  <!-- Utility Jacket & Wide Leg Trousers (Tone-on-tone stone) -->
+  <path d="M230 250 L275 235 L325 235 L370 250 L395 380 L365 390 L355 300 L355 450 L245 450 L245 300 L235 390 L205 380 Z" fill="#DCD6CA" stroke="#BCB4A6" stroke-width="1.5"/>
+  <line x1="300" y1="250" x2="300" y2="450" stroke="#BCB4A6" stroke-width="2"/>
+  <circle cx="300" cy="285" r="3" fill="#181716"/>
+  <circle cx="300" cy="335" r="3" fill="#181716"/>
+  <circle cx="300" cy="385" r="3" fill="#181716"/>
+
+  <!-- Trousers -->
+  <path d="M250 450 L240 680 L285 680 L300 520 L315 680 L360 680 L350 450 Z" fill="#EAE5DB" stroke="#BCB4A6" stroke-width="1.5"/>
+
+  <!-- Minimalist Loafers -->
+  <rect x="235" y="680" width="24" height="12" rx="2" fill="#181716"/>
+  <rect x="340" y="680" width="24" height="12" rx="2" fill="#181716"/>
+
+  <text x="50" y="730" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#6E665E" letter-spacing="3">LOOK 03</text>
+  <text x="50" y="750" font-family="'Playfair Display', serif" font-size="16" font-style="italic" fill="#181716">Neutral Form</text>
+</svg>

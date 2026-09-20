@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="catBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="jeansBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A5F"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#catBg3)"/>
+
+  <!-- Selvedge Denim editorial flat-lay -->
+  <g transform="translate(300, 380)">
+    <!-- Left jeans leg angled -->
+    <path d="M-100 -220 L-80 220 L-12 220 L0 -35 Z" fill="url(#jeansBlue)" stroke="#1E3A5F" stroke-width="1.5"/>
+    <!-- Right jeans leg angled -->
+    <path d="M100 -220 L80 220 L12 220 L0 -35 Z" fill="url(#jeansBlue)" stroke="#1E3A5F" stroke-width="1.5"/>
+    <!-- Waistband -->
+    <path d="M-120 -220 L120 -220 L115 -175 L-115 -175 Z" fill="#0F172A" stroke="#1E3A5F" stroke-width="1.5"/>
+    <!-- Yoke seam -->
+    <path d="M-115 -175 Q0 -195 115 -175" fill="none" stroke="#2D4E78" stroke-width="1.5"/>
+    <!-- Belt loops -->
+    <rect x="-88" y="-222" width="9" height="26" fill="#0A1020" rx="2"/>
+    <rect x="-28" y="-222" width="9" height="26" fill="#0A1020" rx="2"/>
+    <rect x="19" y="-222" width="9" height="26" fill="#0A1020" rx="2"/>
+    <rect x="79" y="-222" width="9" height="26" fill="#0A1020" rx="2"/>
+    <!-- Button fly -->
+    <circle cx="0" cy="-200" r="5" fill="#A78BFA"/>
+    <circle cx="0" cy="-180" r="4" fill="#8B5CF6"/>
+    <!-- Coin pocket -->
+    <path d="M-90 -170 Q-65 -155 -48 -170" fill="none" stroke="#A78BFA" stroke-width="1.5"/>
+    <!-- Front pockets seam -->
+    <path d="M-98 -175 Q-75 -150 -60 -80" fill="none" stroke="#2D4E78" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <path d="M98 -175 Q75 -150 60 -80" fill="none" stroke="#2D4E78" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <!-- Crease lines -->
+    <line x1="-40" y1="-30" x2="-42" y2="215" stroke="#2D4E78" stroke-width="1.5"/>
+    <line x1="40" y1="-30" x2="42" y2="215" stroke="#2D4E78" stroke-width="1.5"/>
+    <!-- Selvedge ID / brand -->
+    <rect x="-100" y="205" width="88" height="18" fill="#0F172A" rx="2"/>
+    <line x1="-65" y1="205" x2="-65" y2="223" stroke="#DC2626" stroke-width="2.5"/>
+    <rect x="12" y="205" width="88" height="18" fill="#0F172A" rx="2"/>
+    <line x1="65" y1="205" x2="65" y2="223" stroke="#DC2626" stroke-width="2.5"/>
+    <!-- Whisker fades -->
+    <line x1="-75" y1="-160" x2="-55" y2="-20" stroke="#2D4E78" stroke-width="2" opacity="0.7"/>
+    <line x1="75" y1="-160" x2="55" y2="-20" stroke="#2D4E78" stroke-width="2" opacity="0.7"/>
+  </g>
+
+  <text x="50%" y="88%" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">DENIM</text>
+  <text x="50%" y="93%" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="rgba(196,181,253,0.9)" text-anchor="middle" letter-spacing="3">STRAIGHT · SLIM · WIDE</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aboutBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="60%" stop-color="#EDE9FE"/>
+      <stop offset="100%" stop-color="#DDD6FE"/>
+    </linearGradient>
+    <linearGradient id="rackBar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#4C1D95"/>
+    </linearGradient>
+    <pattern id="floorLines" width="50" height="50" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="50" x2="50" y2="50" stroke="rgba(167,139,250,0.15)" stroke-width="1"/>
+      <line x1="50" y1="0" x2="50" y2="50" stroke="rgba(167,139,250,0.15)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="600" fill="url(#aboutBg)"/>
+  <rect width="900" height="600" fill="url(#floorLines)"/>
+
+  <!-- Floor perspective lines -->
+  <path d="M0 450 L450 350 L900 450" stroke="rgba(167,139,250,0.3)" stroke-width="1.5" fill="none"/>
+  <path d="M0 520 L450 390 L900 520" stroke="rgba(167,139,250,0.2)" stroke-width="1.5" fill="none"/>
+
+  <!-- Garment rack — horizontal bar -->
+  <rect x="120" y="155" width="660" height="8" fill="url(#rackBar)" rx="4"/>
+  <!-- Rack legs -->
+  <rect x="118" y="155" width="8" height="280" fill="url(#rackBar)" rx="4"/>
+  <rect x="774" y="155" width="8" height="280" fill="url(#rackBar)" rx="4"/>
+  <!-- Rack feet -->
+  <rect x="95" y="430" width="56" height="8" fill="url(#rackBar)" rx="4"/>
+  <rect x="752" y="430" width="56" height="8" fill="url(#rackBar)" rx="4"/>
+  <!-- Wheels -->
+  <circle cx="110" cy="440" r="10" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+  <circle cx="140" cy="440" r="10" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+  <circle cx="762" cy="440" r="10" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+  <circle cx="792" cy="440" r="10" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+
+  <!-- Clothes hangers + garments -->
+  <!-- Hanger 1: white shirt -->
+  <path d="M210 155 L195 195 L225 195" fill="none" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="175" y="195" width="100" height="165" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.5" rx="3"/>
+  <line x1="210" y1="195" x2="210" y2="358" stroke="#EDE9FE" stroke-width="1.5"/>
+
+  <!-- Hanger 2: lavender oversized tee -->
+  <path d="M310 155 L295 195 L325 195" fill="none" stroke="#C4B5FD" stroke-width="2"/>
+  <path d="M265 205 L280 200 L340 200 L355 205 L345 355 L275 355 Z" fill="#C4B5FD" stroke="#A78BFA" stroke-width="1.5"/>
+
+  <!-- Hanger 3: deep purple blazer -->
+  <path d="M420 155 L405 200 L435 200" fill="none" stroke="#C4B5FD" stroke-width="2"/>
+  <path d="M370 210 L405 200 L435 200 L470 210 L462 360 L378 360 Z" fill="#4C1D95" stroke="#312E81" stroke-width="1.5"/>
+  <path d="M405 200 L420 290 L435 200" fill="#5B21B6"/>
+
+  <!-- Hanger 4: indigo wide trouser -->
+  <path d="M530 155 L515 210 L545 210" fill="none" stroke="#C4B5FD" stroke-width="2"/>
+  <path d="M490 215 L510 355 L525 355 L530 250 L535 355 L550 355 L570 215 Z" fill="#1E3A5F" stroke="#1B2F4E" stroke-width="1.5"/>
+
+  <!-- Hanger 5: off-white linen dress -->
+  <path d="M645 155 L630 200 L660 200" fill="none" stroke="#C4B5FD" stroke-width="2"/>
+  <path d="M605 210 L625 200 L665 200 L685 210 L700 360 L590 360 Z" fill="#FAFAFE" stroke="#EDE9FE" stroke-width="1.5"/>
+  <path d="M625 200 L645 240 L665 200" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1"/>
+
+  <!-- Mood board pinned top left -->
+  <rect x="30" y="30" width="120" height="80" rx="4" fill="white" stroke="#DDD6FE" stroke-width="1.5" opacity="0.9"/>
+  <rect x="35" y="35" width="110" height="45" rx="3" fill="url(#rackBar)" opacity="0.8"/>
+  <text x="90" y="62" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">S/S 2026</text>
+  <text x="90" y="100" font-family="Arial, sans-serif" font-size="8" font-weight="600" fill="#7C3AED" text-anchor="middle" letter-spacing="2">LOOKBOOK</text>
+
+  <!-- Studio brand stamp -->
+  <text x="840" y="50" font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="700" fill="#4C1D95" text-anchor="end" letter-spacing="3">AURA STUDIO</text>
+  <text x="840" y="68" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="#A78BFA" text-anchor="end" letter-spacing="3">DESIGN STUDIO · CHENNAI</text>
+</svg>

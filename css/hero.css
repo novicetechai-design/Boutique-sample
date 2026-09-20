@@ -1,0 +1,333 @@
+/**
+ * ==============================================================================
+ * HERO SECTION — Purple/Lavender/White Theme
+ * Modern contemporary fashion — strong two-column layout
+ * ==============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+ * 1. HERO WRAPPER
+ * ---------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3rem, 2rem + 4vw, 6rem);
+  background: #FFFFFF;
+}
+
+/* Decorative lavender radial blob — right side */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 55%;
+  height: 120%;
+  background: radial-gradient(ellipse at 70% 40%, #EDE9FE 0%, #F5F3FF 45%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(2.5rem, 2rem + 3vw, 5rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------------------------------
+ * 2. HERO CONTENT (LEFT)
+ * ---------------------------------------------------------------------------- */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  font-weight: var(--fw-bold);
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  background-color: var(--color-accent-soft);
+  padding: 0.35rem 1rem 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-lavender-mid);
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  border-radius: 50%;
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-normal);
+  line-height: 1.1;
+  letter-spacing: var(--ls-tight);
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-family: var(--font-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-lavender) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--fw-normal);
+}
+
+.hero-subheadline {
+  font-size: var(--fs-md);
+  color: var(--color-text-muted);
+  line-height: var(--lh-loose);
+  font-weight: var(--fw-normal);
+  max-width: 520px;
+  margin-bottom: 2.25rem;
+}
+
+/* CTA Group */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.hero-btn-primary {
+  padding: 1rem 2.25rem;
+  font-size: var(--fs-sm);
+  letter-spacing: var(--ls-wide);
+}
+
+.hero-btn-whatsapp {
+  padding: 1rem 1.85rem;
+  font-size: var(--fs-sm);
+}
+
+/* Feature Highlights */
+.hero-features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border-light);
+  width: 100%;
+  list-style: none;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: var(--fw-semibold);
+}
+
+.hero-feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-lavender));
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------------------------
+ * 3. HERO VISUAL (RIGHT)
+ * ---------------------------------------------------------------------------- */
+.hero-visual-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(76, 29, 149, 0.2);
+  background: linear-gradient(135deg, var(--color-accent-soft) 0%, var(--color-lavender-light) 100%);
+}
+
+.hero-image-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(167, 139, 250, 0.3);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.hero-visual-wrap:hover .hero-img {
+  transform: scale(1.03);
+}
+
+/* Floating Badge */
+.hero-floating-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: -1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid var(--color-lavender-mid);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.4rem;
+  box-shadow: 0 8px 30px rgba(76, 29, 149, 0.18);
+  z-index: 3;
+  max-width: 230px;
+  animation: floatBadge 5s ease-in-out infinite alternate;
+}
+
+.badge-pretitle {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--color-accent);
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.2rem;
+}
+
+.badge-title {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+
+.badge-subtitle {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Legacy glow accent — now a purple radial */
+.hero-glow-accent {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, transparent 70%);
+  top: 5%;
+  right: -8%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4. ANIMATIONS
+ * ---------------------------------------------------------------------------- */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroImageReveal {
+  from { opacity: 0; transform: scale(0.96) translateY(16px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes floatBadge {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.animate-hero-1 { animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.08s; }
+.animate-hero-2 { animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.20s; }
+.animate-hero-3 { animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.32s; }
+.animate-hero-4 { animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.44s; }
+.animate-hero-5 { animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.56s; }
+.animate-hero-image { animation: heroImageReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: 0.25s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-1,.animate-hero-2,.animate-hero-3,
+  .animate-hero-4,.animate-hero-5,.animate-hero-image,
+  .hero-floating-badge { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* ----------------------------------------------------------------------------
+ * 5. RESPONSIVE
+ * ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-section::before { display: none; }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    order: 1;
+  }
+
+  .hero-visual-wrap {
+    order: 2;
+    max-width: 420px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .hero-eyebrow::before { display: none; }
+  .hero-subheadline { margin-inline: auto; }
+  .hero-cta-group { justify-content: center; }
+  .hero-features-list { justify-content: center; }
+
+  .hero-floating-badge {
+    left: 0.75rem;
+    bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-group .btn { width: 100%; }
+  .hero-floating-badge {
+    position: static;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 100%;
+    animation: none;
+  }
+}

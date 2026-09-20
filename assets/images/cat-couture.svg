@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="catBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="shirtWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F5F3FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#catBg1)"/>
+  <!-- Dot grid overlay -->
+  <rect width="600" height="800" fill="none" stroke="#312E81" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Crisp White Oxford Shirt illustration, centered -->
+  <g transform="translate(300, 380)">
+    <path d="M-155 -180 L-68 -215 L68 -215 L155 -180 L142 220 L-142 220 Z" fill="url(#shirtWhite)"/>
+    <path d="M-68 -215 L0 -158 L68 -215 L38 -230 L-38 -230 Z" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+    <!-- Collar band -->
+    <rect x="-22" y="-180" width="44" height="22" fill="#DDD6FE" rx="2"/>
+    <!-- Button front -->
+    <line x1="0" y1="-158" x2="0" y2="220" stroke="#DDD6FE" stroke-width="2.5"/>
+    <circle cx="0" cy="-120" r="5" fill="#A78BFA"/>
+    <circle cx="0" cy="-55" r="5" fill="#A78BFA"/>
+    <circle cx="0" cy="10" r="5" fill="#A78BFA"/>
+    <circle cx="0" cy="75" r="5" fill="#A78BFA"/>
+    <circle cx="0" cy="140" r="5" fill="#A78BFA"/>
+    <circle cx="0" cy="205" r="5" fill="#A78BFA"/>
+    <!-- Chest pocket -->
+    <rect x="-105" y="-110" width="62" height="80" fill="none" stroke="#C4B5FD" stroke-width="1.5" rx="3"/>
+    <!-- Sleeves -->
+    <path d="M-155 -180 L-218 30 L-182 45 L-140 -80 Z" fill="#FAFAFE" stroke="#DDD6FE" stroke-width="1.5"/>
+    <path d="M155 -180 L218 30 L182 45 L140 -80 Z" fill="#FAFAFE" stroke="#DDD6FE" stroke-width="1.5"/>
+    <rect x="-218" y="14" width="38" height="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1" rx="2"/>
+    <rect x="180" y="14" width="38" height="16" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1" rx="2"/>
+  </g>
+
+  <text x="50%" y="88%" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">SHIRTS</text>
+  <text x="50%" y="93%" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="rgba(196,181,253,0.9)" text-anchor="middle" letter-spacing="3">OXFORD · LINEN · POPLIN</text>
+</svg>

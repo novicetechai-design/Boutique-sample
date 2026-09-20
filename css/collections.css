@@ -1,0 +1,332 @@
+/**
+ * ==============================================================================
+ * COLLECTIONS & CATEGORY SPOTLIGHT STYLES (css/collections.css)
+ * ==============================================================================
+ * Luxury editorial lookbook grid, asymmetric magazine layout,
+ * image zoom micro-interactions, gold framing, and typography overlays.
+ * ==============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+ * 1. SECTION WRAPPER & HEADER
+ * ---------------------------------------------------------------------------- */
+.collections-section {
+  position: relative;
+  padding-block: var(--space-section);
+  background-color: var(--color-bg-main);
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: clamp(2.5rem, 1.5rem + 2.5vw, 4rem);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-normal);
+  color: var(--color-primary);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-tight);
+}
+
+.section-subtitle {
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+  font-weight: var(--fw-light);
+  line-height: var(--lh-body);
+  margin-top: 0.75rem;
+}
+
+/* ----------------------------------------------------------------------------
+ * 2. ASYMMETRIC EDITORIAL GRID (DESKTOP)
+ * ---------------------------------------------------------------------------- */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.25rem, 1rem + 1vw, 2rem);
+}
+
+/* ----------------------------------------------------------------------------
+ * 3. LUXURY EDITORIAL CATEGORY CARD
+ * ---------------------------------------------------------------------------- */
+.collection-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-dark);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  cursor: pointer;
+}
+
+/* Asymmetric Magazine Rhythm */
+.collection-card:nth-child(1) {
+  grid-column: span 7;
+  min-height: 500px;
+}
+
+.collection-card:nth-child(2) {
+  grid-column: span 5;
+  min-height: 500px;
+}
+
+.collection-card:nth-child(3) {
+  grid-column: span 5;
+  min-height: 440px;
+}
+
+.collection-card:nth-child(4) {
+  grid-column: span 7;
+  min-height: 440px;
+}
+
+/* Fallback for additional dynamic categories */
+.collection-card:nth-child(n+5) {
+  grid-column: span 6;
+  min-height: 440px;
+}
+
+/* Hover elevation */
+.collection-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Clean subtle card boundary */
+.collection-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-border-light);
+  border-radius: inherit;
+  z-index: 3;
+  pointer-events: none;
+  transition: border-color var(--transition-base);
+}
+
+.collection-card:hover::after {
+  border-color: var(--color-border-accent);
+}
+
+/* Image Presentation & Zoom Effect */
+.collection-card-img-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.collection-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collection-card:hover .collection-card-img {
+  transform: scale(1.05);
+}
+
+/* Dual Gradient Overlay */
+.collection-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg, 
+    rgba(20, 18, 16, 0.15) 0%, 
+    rgba(20, 18, 16, 0.35) 40%, 
+    rgba(14, 12, 11, 0.94) 100%
+  );
+  transition: background var(--transition-base);
+}
+
+.collection-card:hover .collection-card-overlay {
+  background: linear-gradient(
+    180deg, 
+    rgba(20, 18, 16, 0.05) 0%, 
+    rgba(20, 18, 16, 0.3) 35%, 
+    rgba(14, 12, 11, 0.96) 100%
+  );
+}
+
+/* Top Meta Badges */
+.collection-card-badge {
+  position: absolute;
+  top: 1.75rem;
+  left: 1.75rem;
+  z-index: 4;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  font-weight: var(--fw-semibold);
+  color: #FFFFFF;
+  background: rgba(28, 25, 23, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  border-radius: var(--radius-xs);
+}
+
+.collection-card-count {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  z-index: 4;
+  font-size: var(--fs-xs);
+  color: var(--color-accent-soft);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+}
+
+/* Bottom Editorial Card Content */
+.collection-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(1.5rem, 1rem + 1.2vw, 2.25rem);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.collection-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 1.15rem + 0.8vw, 2.1rem);
+  color: #FFFFFF;
+  font-weight: var(--fw-normal);
+  line-height: 1.15;
+  letter-spacing: var(--ls-tight);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.collection-card-desc {
+  font-size: var(--fs-sm);
+  color: #E7E5E4;
+  line-height: 1.5;
+  font-weight: var(--fw-light);
+  max-width: 480px;
+  margin-top: 0.4rem;
+  opacity: 0.92;
+}
+
+.collection-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent);
+  margin-top: 0.85rem;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.collection-card-cta svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  transition: transform var(--transition-fast);
+}
+
+.collection-card:hover .collection-card-cta {
+  color: #FFFFFF;
+}
+
+.collection-card:hover .collection-card-cta svg {
+  transform: translateX(4px);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4. RESPONSIVE ADAPTATIONS (TABLET & MOBILE)
+ * ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .collection-card:nth-child(1),
+  .collection-card:nth-child(2),
+  .collection-card:nth-child(3),
+  .collection-card:nth-child(4),
+  .collection-card:nth-child(n+5) {
+    grid-column: span 1;
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 640px) {
+  .collections-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .collection-card:nth-child(1),
+  .collection-card:nth-child(2),
+  .collection-card:nth-child(3),
+  .collection-card:nth-child(4),
+  .collection-card:nth-child(n+5) {
+    grid-column: span 1;
+    min-height: 380px;
+  }
+
+  .collection-card-content {
+    padding: 1.25rem;
+  }
+
+  .collection-card::after {
+    inset: 8px;
+  }
+
+  .collection-card:hover::after {
+    inset: 6px;
+  }
+
+  .collection-card-badge,
+  .collection-card-count {
+    top: 1.25rem;
+  }
+
+  .collection-card-badge {
+    left: 1.25rem;
+  }
+
+  .collection-card-count {
+    right: 1.25rem;
+  }
+}

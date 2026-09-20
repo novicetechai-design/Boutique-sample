@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F2EDE4"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#pBg)"/>
+  <rect x="20" y="20" width="560" height="760" fill="none" stroke="#EAE5DB" stroke-width="1"/>
+
+  <!-- Pleated Linen-Cotton Trousers (Warm Stone) -->
+  <g transform="translate(300, 360)">
+    <!-- Waistband -->
+    <rect x="-80" y="-180" width="160" height="24" rx="2" fill="#DCD6CA" stroke="#BCB4A6" stroke-width="1.5"/>
+    <circle cx="0" cy="-168" r="3.5" fill="#181716"/>
+
+    <!-- Trousers Legs -->
+    <path d="M-80 -156 L-90 200 L-15 200 L0 -40 L15 200 L90 200 L80 -156 Z" fill="#EAE5DB" stroke="#BCB4A6" stroke-width="1.5"/>
+    
+    <!-- Forward Pleats -->
+    <line x1="-45" y1="-156" x2="-50" y2="195" stroke="#DCD6CA" stroke-width="1.5"/>
+    <line x1="45" y1="-156" x2="50" y2="195" stroke="#DCD6CA" stroke-width="1.5"/>
+  </g>
+
+  <!-- Clean Editorial Product Label -->
+  <text x="300" y="710" font-family="'Playfair Display', serif" font-size="18" font-weight="600" fill="#181716" text-anchor="middle">Pleated Linen-Cotton Trousers</text>
+  <text x="300" y="732" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#6E665E" text-anchor="middle" letter-spacing="2">55% FRENCH LINEN, 45% COTTON • $135</text>
+</svg>

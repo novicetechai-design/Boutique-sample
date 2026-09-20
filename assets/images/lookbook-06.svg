@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lb6Bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5F3FF" />
+      <stop offset="100%" stop-color="#EDE9FE" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#lb6Bg)" />
+  <rect x="25" y="25" width="750" height="950" fill="none" stroke="#C4B5FD" stroke-width="1" />
+
+  <!-- Editorial: Pleated Trouser & Blazer Combo in Clean Studio -->
+  <g transform="translate(400, 480)">
+    <!-- Clean Arch Window Background -->
+    <path d="M-200 380 L-200 -180 C-200 -300 200 -300 200 -180 L200 380 Z" fill="#FFFFFF" />
+
+    <!-- Trouser Leg — Left -->
+    <path d="M-70 -120 L-80 350 L-15 350 L-10 -60 Z" fill="#312E81" stroke="#1E1B4B" stroke-width="1.25" />
+    <!-- Trouser Leg — Right -->
+    <path d="M10 -60 L15 350 L80 350 L70 -120 Z" fill="#1E1B4B" stroke="#1E1B4B" stroke-width="1.25" />
+    <!-- Pleated Trouser Waistband -->
+    <rect x="-85" y="-120" width="170" height="20" fill="#4C1D95" stroke="#312E81" stroke-width="1" />
+    <!-- Center Crease Lines -->
+    <line x1="-40" y1="-100" x2="-42" y2="345" stroke="#6D28D9" stroke-width="1.25" />
+    <line x1="40" y1="-100" x2="42" y2="345" stroke="#6D28D9" stroke-width="1.25" />
+
+    <!-- Blazer Jacket Layer -->
+    <path d="M-140 -160 L-65 -200 L65 -200 L140 -160 L125 40 L-125 40 Z" fill="#4C1D95" stroke="#312E81" stroke-width="1.25" />
+    <path d="M-65 -200 L-15 -20 L0 -20 L15 -20 L65 -200 Z" fill="#5B21B6" />
+    <circle cx="0" cy="5" r="4.5" fill="#C4B5FD" />
+  </g>
+
+  <text x="50%" y="90%" font-family="'Playfair Display', Georgia, serif" font-size="20" fill="#4C1D95" text-anchor="middle" letter-spacing="3">TAILORED RELAXED SUITING</text>
+  <text x="50%" y="93.5%" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle" letter-spacing="2">ARCHIVE LOOK 06 • UNSTRUCTURED BLAZER &amp; PLEATED TROUSERS</text>
+</svg>

@@ -1,0 +1,450 @@
+/**
+ * ==============================================================================
+ * TESTIMONIALS / CLIENT REFLECTIONS STYLES (css/testimonials.css)
+ * ==============================================================================
+ * Premium editorial testimonials carousel — fashion magazine aesthetic.
+ * Large serif pull-quotes, champagne gold accents, refined typography,
+ * accessible slider with prev/next controls, dot pagination,
+ * swipe gestures, and entrance animations.
+ * ==============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+ * 1. SECTION SHELL
+ * ---------------------------------------------------------------------------- */
+.testimonials-section {
+  position: relative;
+  padding-block: var(--space-section);
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+/* Subtle radial gradient overlays */
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Large decorative background quotation mark */
+.testimonials-bg-quote {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-serif);
+  font-size: clamp(14rem, 20vw, 24rem);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+  aria-hidden: true;
+}
+
+/* Section Header */
+.testimonials-section .section-header-center {
+  position: relative;
+  z-index: 1;
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+
+.testimonials-section .section-eyebrow {
+  color: var(--color-accent);
+}
+
+.testimonials-section .section-title {
+  color: var(--color-text-inverse);
+}
+
+.testimonials-section .section-subtitle {
+  color: var(--color-text-light);
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+/* ----------------------------------------------------------------------------
+ * 2. CAROUSEL WRAPPER
+ * ---------------------------------------------------------------------------- */
+.testimonials-carousel-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* Slide track — clips overflowing slides */
+.testimonials-track-clip {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.65s var(--ease-luxury);
+  will-change: transform;
+}
+
+/* Dragging state — no transition during drag */
+.testimonials-track.is-dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+/* ----------------------------------------------------------------------------
+ * 3. INDIVIDUAL TESTIMONIAL CARD
+ * ---------------------------------------------------------------------------- */
+.testimonial-card {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: clamp(2.5rem, 3rem + 1vw, 4rem) clamp(2rem, 2.5rem + 2vw, 4.5rem);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Internal subtle top accent line */
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: clamp(2rem, 2.5rem + 2vw, 4.5rem);
+  right: clamp(2rem, 2.5rem + 2vw, 4.5rem);
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+/* ----------------------------------------------------------------------------
+ * 4. QUOTE MARK ORNAMENT
+ * ---------------------------------------------------------------------------- */
+.testimonial-quote-mark {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 0.7;
+  color: var(--color-accent);
+  opacity: 0.65;
+  margin-bottom: 1.25rem;
+  user-select: none;
+}
+
+/* ----------------------------------------------------------------------------
+ * 5. TESTIMONIAL QUOTE TEXT
+ * ---------------------------------------------------------------------------- */
+.testimonial-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.05rem + 0.8vw, 1.625rem);
+  font-weight: var(--fw-normal);
+  font-style: italic;
+  color: var(--color-text-inverse);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  margin-bottom: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+  position: relative;
+}
+
+/* ----------------------------------------------------------------------------
+ * 6. HORIZONTAL GOLD DIVIDER
+ * ---------------------------------------------------------------------------- */
+.testimonial-divider {
+  width: clamp(40px, 4vw, 60px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-accent), rgba(197, 168, 128, 0.3));
+  margin-bottom: clamp(1.25rem, 1rem + 0.75vw, 1.75rem);
+  border: none;
+  display: block;
+}
+
+/* ----------------------------------------------------------------------------
+ * 7. CLIENT ATTRIBUTION ROW
+ * ---------------------------------------------------------------------------- */
+.testimonial-attribution {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Avatar circle — img or initials fallback */
+.testimonial-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: var(--fw-medium);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Client meta text column */
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.testimonial-client-name {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-inverse);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.testimonial-occasion-location {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  font-weight: var(--fw-normal);
+  letter-spacing: var(--ls-wide);
+}
+
+/* Star Rating Row */
+.testimonial-stars {
+  display: flex;
+  gap: 2px;
+  margin-top: 0.3rem;
+}
+
+.testimonial-star {
+  width: 12px;
+  height: 12px;
+  color: var(--color-accent);
+  fill: currentColor;
+}
+
+.testimonial-star.is-empty {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ----------------------------------------------------------------------------
+ * 8. FEATURED BADGE
+ * ---------------------------------------------------------------------------- */
+.testimonial-featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--color-text-inverse);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-featured-badge svg {
+  width: 9px;
+  height: 9px;
+  fill: currentColor;
+}
+
+/* ----------------------------------------------------------------------------
+ * 9. NAVIGATION CONTROLS — PREV / NEXT ARROWS + DOTS
+ * ---------------------------------------------------------------------------- */
+.testimonials-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 1.5rem + 1vw, 2rem);
+  margin-top: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.testimonials-nav-btn:hover:not(:disabled) {
+  background-color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+  color: var(--color-primary);
+  transform: scale(1.06);
+}
+
+.testimonials-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.testimonials-nav-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Dot Pagination */
+.testimonials-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.testimonials-dot-btn {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    width var(--transition-base),
+    background-color var(--transition-base),
+    border-radius var(--transition-base);
+}
+
+.testimonials-dot-btn.is-active {
+  width: 24px;
+  border-radius: 3px;
+  background-color: var(--color-text-inverse);
+}
+
+.testimonials-dot-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* ----------------------------------------------------------------------------
+ * 10. ENTRANCE ANIMATION
+ * ---------------------------------------------------------------------------- */
+.testimonials-carousel-wrap {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s var(--ease-luxury),
+    transform 0.8s var(--ease-luxury);
+}
+
+.testimonials-carousel-wrap.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------------------------------
+ * 11. PREFERS REDUCED MOTION
+ * ---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-track,
+  .testimonials-carousel-wrap,
+  .testimonials-nav-btn,
+  .testimonials-dot-btn {
+    transition: none;
+  }
+
+  .testimonials-carousel-wrap {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * 12. RESPONSIVE — TABLET (≤ 768px)
+ * ---------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 2.25rem 2rem;
+  }
+
+  .testimonial-quote {
+    font-size: var(--fs-lg);
+  }
+
+  .testimonials-nav-btn {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * 13. RESPONSIVE — MOBILE (≤ 480px)
+ * ---------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .testimonial-card::before {
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .testimonial-quote {
+    font-size: var(--fs-md);
+    line-height: 1.7;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonials-nav {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .testimonials-nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .testimonials-dot-btn.is-active {
+    width: 18px;
+  }
+}

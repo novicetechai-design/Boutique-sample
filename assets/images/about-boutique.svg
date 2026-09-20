@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="boutiqueWall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="60%" stop-color="#F4F0E8"/>
+      <stop offset="100%" stop-color="#EAE5DB"/>
+    </linearGradient>
+
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2DDD2"/>
+      <stop offset="100%" stop-color="#D4CCC0"/>
+    </linearGradient>
+
+    <linearGradient id="pedestalStone" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DCD6CA"/>
+      <stop offset="50%" stop-color="#E8E2D7"/>
+      <stop offset="100%" stop-color="#BCB4A6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width="800" height="720" fill="url(#boutiqueWall)"/>
+
+  <!-- Architectural Studio Lines & Soft Sunlight Wash -->
+  <polygon points="120,0 380,0 520,720 180,720" fill="#FFFFFF" opacity="0.45"/>
+  <line x1="580" y1="0" x2="580" y2="720" stroke="#DCD6CA" stroke-width="1"/>
+
+  <!-- Boutique Hardwood / Polished Stone Floor -->
+  <rect y="720" width="800" height="280" fill="url(#floorGrad)"/>
+  <line x1="0" y1="720" x2="800" y2="720" stroke="#BCB4A6" stroke-width="1.5"/>
+
+  <!-- Minimalist Black Steel Clothing Rack -->
+  <!-- Base frame -->
+  <line x1="140" y1="720" x2="140" y2="240" stroke="#181716" stroke-width="4" stroke-linecap="round"/>
+  <line x1="560" y1="720" x2="560" y2="240" stroke="#181716" stroke-width="4" stroke-linecap="round"/>
+  <line x1="130" y1="240" x2="570" y2="240" stroke="#181716" stroke-width="4" stroke-linecap="round"/>
+  <!-- Feet -->
+  <line x1="110" y1="720" x2="170" y2="720" stroke="#181716" stroke-width="6" stroke-linecap="round"/>
+  <line x1="530" y1="720" x2="590" y2="720" stroke="#181716" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Hanging Ready-to-Wear Garments (Curated Natural Fabrics) -->
+  <!-- Garment 1: Natural Linen Wrap Dress -->
+  <path d="M170 240 L210 240 L230 600 L160 600 Z" fill="#FAF8F5" stroke="#DCD6CA" stroke-width="1.5"/>
+  <line x1="185" y1="240" x2="185" y2="260" stroke="#6E665E" stroke-width="2"/>
+
+  <!-- Garment 2: Sandstone Poplin Shirt -->
+  <path d="M220 240 L265 240 L280 520 L210 520 Z" fill="#EAE5DB" stroke="#BCB4A6" stroke-width="1.5"/>
+  <line x1="240" y1="240" x2="240" y2="260" stroke="#6E665E" stroke-width="2"/>
+
+  <!-- Garment 3: Warm Charcoal Trousers -->
+  <path d="M275 240 L320 240 L330 570 L270 570 Z" fill="#2C2A29" stroke="#181716" stroke-width="1.5"/>
+  <line x1="295" y1="240" x2="295" y2="260" stroke="#6E665E" stroke-width="2"/>
+
+  <!-- Garment 4: Bone Knit Top -->
+  <path d="M330 240 L375 240 L385 480 L325 480 Z" fill="#F4F0E8" stroke="#DCD6CA" stroke-width="1.5"/>
+  <line x1="350" y1="240" x2="350" y2="260" stroke="#6E665E" stroke-width="2"/>
+
+  <!-- Garment 5: Canvas Utility Jacket -->
+  <path d="M385 240 L445 240 L455 540 L380 540 Z" fill="#DCD6CA" stroke="#BCB4A6" stroke-width="1.5"/>
+  <line x1="415" y1="240" x2="415" y2="260" stroke="#6E665E" stroke-width="2"/>
+
+  <!-- Garment 6: Olive Linen Dress -->
+  <path d="M455 240 L505 240 L520 620 L450 620 Z" fill="#E0DDD4" stroke="#BCB4A6" stroke-width="1.5"/>
+  <line x1="480" y1="240" x2="480" y2="260" stroke="#6E665E" stroke-width="2"/>
+
+  <!-- Minimalist Stone Display Plinth (Right Side) -->
+  <polygon points="620,580 720,580 720,780 620,780" fill="url(#pedestalStone)"/>
+  <polygon points="600,600 700,600 720,580 620,580" fill="#F0ECE4"/>
+  <polygon points="600,600 700,600 700,800 600,800" fill="#C8C0B2"/>
+
+  <!-- Ceramic Vessel on Plinth -->
+  <path d="M635 600 C630 520, 670 520, 665 600 Z" fill="#FAF8F5" stroke="#BCB4A6" stroke-width="1.5"/>
+  <!-- Minimal dry floral stem -->
+  <path d="M650 520 Q655 450 670 410" fill="none" stroke="#6E665E" stroke-width="1.5"/>
+  <circle cx="670" cy="410" r="4" fill="#6E665E"/>
+
+  <!-- Subtle Studio Wall Signage -->
+  <text x="700" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#6E665E" text-anchor="end" letter-spacing="4">AURA STUDIO</text>
+  <text x="700" y="180" font-family="'Playfair Display', serif" font-size="14" font-style="italic" fill="#181716" text-anchor="end" letter-spacing="1">142 Mercer Street, SoHo</text>
+</svg>

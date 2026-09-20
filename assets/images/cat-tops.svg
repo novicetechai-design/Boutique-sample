@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="catTopsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F2EDE4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#catTopsBg)"/>
+  <rect x="25" y="25" width="550" height="750" fill="none" stroke="#EAE5DB" stroke-width="1"/>
+
+  <!-- Minimalist Hanger Detail -->
+  <path d="M260 140 C260 115, 340 115, 340 140 C340 155, 300 160, 300 175" fill="none" stroke="#6E665E" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="190" y1="210" x2="410" y2="210" stroke="#6E665E" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Heavyweight Boxy Tee Graphic -->
+  <!-- Main Body -->
+  <path d="M200 210 L260 195 L340 195 L400 210 L440 310 L395 325 L385 275 L385 520 L215 520 L215 275 L205 325 L160 310 Z" fill="#EAE5DB" stroke="#BCB4A6" stroke-width="1.5"/>
+  
+  <!-- Rib Crew Collar -->
+  <path d="M260 195 C260 230, 340 230, 340 195 C335 190, 265 190, 260 195 Z" fill="#FAF8F5" stroke="#BCB4A6" stroke-width="1.5"/>
+  
+  <!-- Clean Hem and Sleeve Topstitching -->
+  <line x1="215" y1="505" x2="385" y2="505" stroke="#DCD6CA" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="165" y1="300" x2="202" y2="313" stroke="#DCD6CA" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="398" y1="313" x2="435" y2="300" stroke="#DCD6CA" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Category Label Text -->
+  <text x="300" y="690" font-family="'Playfair Display', serif" font-size="22" font-weight="600" fill="#181716" text-anchor="middle" letter-spacing="2">TOPS</text>
+  <text x="300" y="715" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#6E665E" text-anchor="middle" letter-spacing="3">EVERYDAY STAPLES • 16 STYLES</text>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" width="100%" height="100%">
+  <defs>
+    <!-- Warm ivory to soft stone gradient -->
+    <linearGradient id="heroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="50%" stop-color="#F4F0E8"/>
+      <stop offset="100%" stop-color="#EAE5DB"/>
+    </linearGradient>
+
+    <!-- Warm charcoal for silhouette -->
+    <linearGradient id="charcoalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2C2A29"/>
+      <stop offset="100%" stop-color="#181716"/>
+    </linearGradient>
+
+    <!-- Natural linen texture wash -->
+    <linearGradient id="linenWash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F4EE"/>
+      <stop offset="100%" stop-color="#E5DFD5"/>
+    </linearGradient>
+
+    <!-- Stone shadow -->
+    <linearGradient id="softShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(24,23,22,0.06)"/>
+      <stop offset="100%" stop-color="rgba(24,23,22,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="900" height="1125" fill="url(#heroBg)"/>
+
+  <!-- Architectural Minimalist Elements: Clean studio background panels -->
+  <rect x="60" y="80" width="780" height="965" fill="none" stroke="#DCD6CA" stroke-width="1"/>
+  <rect x="420" y="80" width="420" height="965" fill="#F0ECE4" opacity="0.5"/>
+
+  <!-- Editorial Studio Pedestal / Wall Shadow -->
+  <path d="M120 880 L780 880 L740 980 L160 980 Z" fill="#E2DDD2" opacity="0.4"/>
+
+  <!-- Minimalist Fashion Editorial Figure — Ready-to-Wear Silhouette -->
+  <!-- Head & Hair (Abstract fashion editorial gesture) -->
+  <ellipse cx="450" cy="260" rx="34" ry="44" fill="#E8DED1"/>
+  <path d="M420 235 C420 195, 480 195, 480 235 C480 280, 470 300, 465 315 L435 315 C430 300, 420 280, 420 235 Z" fill="#2C2A29"/>
+  <!-- Sleek bun -->
+  <circle cx="450" cy="205" r="16" fill="#181716"/>
+
+  <!-- Slender neck -->
+  <path d="M440 300 L460 300 L462 355 L438 355 Z" fill="#E8DED1"/>
+
+  <!-- Relaxed Tailored Trench / Linen Wrap Coat (Warm stone & charcoal accents) -->
+  <!-- Shoulders & Coat Collar -->
+  <path d="M350 380 L440 355 L460 355 L550 380 L560 480 L520 495 L510 420 L450 430 L390 420 L380 495 L340 480 Z" fill="#DCD6CA"/>
+  
+  <!-- Coat Lapel Left -->
+  <path d="M435 355 L385 430 L435 480 L445 420 Z" fill="#EAE5DB" stroke="#BCB4A6" stroke-width="1.5"/>
+  <!-- Coat Lapel Right -->
+  <path d="M465 355 L515 430 L465 480 L455 420 Z" fill="#FAF8F5" stroke="#BCB4A6" stroke-width="1.5"/>
+
+  <!-- Coat Torso & Draped Midi Skirt / Trouser -->
+  <path d="M375 420 L525 420 L555 780 L345 780 Z" fill="#FAF8F5" stroke="#DCD6CA" stroke-width="1.5"/>
+  
+  <!-- Wrap Waist Tie / Belt -->
+  <rect x="400" y="530" width="100" height="18" rx="2" fill="#2C2A29"/>
+  <path d="M435 548 L430 650 L455 645 L450 548 Z" fill="#2C2A29"/>
+
+  <!-- Under-dress / Trouser hem in Charcoal -->
+  <path d="M365 770 L535 770 L525 890 L375 890 Z" fill="#2C2A29"/>
+  
+  <!-- Minimalist Mules / Shoes -->
+  <path d="M400 950 L445 950 L455 970 L395 970 Z" fill="#181716"/>
+  <path d="M455 950 L500 950 L510 970 L450 970 Z" fill="#181716"/>
+  <!-- Lower legs -->
+  <line x1="422" y1="890" x2="425" y2="950" stroke="#D4C9BC" stroke-width="10" stroke-linecap="round"/>
+  <line x1="478" y1="890" x2="480" y2="950" stroke="#D4C9BC" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Subtle editorial typography caption -->
+  <text x="450" y="1035" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#6E665E" text-anchor="middle" letter-spacing="4">AURA STUDIO • SPRING / SUMMER 2026</text>
+  <text x="450" y="1058" font-family="'Playfair Display', serif" font-size="16" font-style="italic" fill="#181716" text-anchor="middle" letter-spacing="1">Contemporary Ready-to-Wear</text>
+</svg>

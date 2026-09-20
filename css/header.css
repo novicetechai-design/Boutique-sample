@@ -1,0 +1,349 @@
+/**
+ * ==============================================================================
+ * HEADER & NAVIGATION — Purple/White Theme
+ * ==============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+ * 1. ANNOUNCEMENT BAR
+ * ---------------------------------------------------------------------------- */
+.announcement-bar {
+  background: linear-gradient(90deg, #4C1D95 0%, #6D28D9 50%, #4C1D95 100%);
+  color: #FFFFFF;
+  padding: 0.55rem var(--container-padding);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: var(--fw-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.announcement-bar a {
+  color: #C4B5FD;
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--transition-fast);
+}
+
+.announcement-bar a:hover {
+  color: #FFFFFF;
+}
+
+/* ----------------------------------------------------------------------------
+ * 2. STICKY HEADER
+ * ---------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border-light);
+  transition: padding var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.99);
+  box-shadow: 0 2px 20px rgba(76, 29, 149, 0.08);
+  border-bottom-color: var(--color-border-medium);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.1rem;
+  transition: padding-block var(--transition-base);
+}
+
+.site-header.is-scrolled .header-inner {
+  padding-block: 0.75rem;
+}
+
+/* ----------------------------------------------------------------------------
+ * 3. BRAND IDENTITY
+ * ---------------------------------------------------------------------------- */
+.brand-link {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1rem + 0.6vw, 1.55rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  transition: opacity var(--transition-fast);
+}
+
+.brand-link:hover .brand-title {
+  opacity: 0.85;
+}
+
+.brand-tagline-sub {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--color-lavender);
+  margin-top: 0.2rem;
+}
+
+/* ----------------------------------------------------------------------------
+ * 4. DESKTOP NAVIGATION
+ * ---------------------------------------------------------------------------- */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 0.75rem + 1.2vw, 2rem);
+  list-style: none;
+}
+
+.nav-link {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  position: relative;
+  padding-block: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 9999px;
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ----------------------------------------------------------------------------
+ * 5. HEADER CTA BUTTON
+ * ---------------------------------------------------------------------------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.25rem;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  background: transparent;
+  transition: var(--transition-base);
+}
+
+.header-cta-btn:hover {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+}
+
+.header-cta-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* ----------------------------------------------------------------------------
+ * 6. HAMBURGER BUTTON
+ * ---------------------------------------------------------------------------- */
+.menu-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--space-xs);
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.menu-toggle-btn:hover {
+  color: var(--color-accent);
+}
+
+.menu-toggle-btn svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+}
+
+/* ----------------------------------------------------------------------------
+ * 7. MOBILE DRAWER
+ * ---------------------------------------------------------------------------- */
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 27, 75, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: var(--z-drawer);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.drawer-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(380px, 88vw);
+  height: 100%;
+  background-color: #FFFFFF;
+  z-index: calc(var(--z-drawer) + 1);
+  box-shadow: -4px 0 40px rgba(76, 29, 149, 0.18);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 1.75rem;
+}
+
+.mobile-drawer.is-active {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.drawer-close-btn {
+  background: none;
+  border: 2px solid var(--color-border-medium);
+  border-radius: var(--radius-sm);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+.drawer-nav {
+  padding-block: 1.75rem 1.25rem;
+  flex-grow: 1;
+}
+
+.drawer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+.drawer-nav-link {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  color: var(--color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.4rem;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: var(--transition-fast);
+}
+
+.drawer-nav-link:hover {
+  color: var(--color-accent);
+  padding-left: 0.5rem;
+}
+
+.drawer-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.drawer-contact-item {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------------------------------------
+ * 8. RESPONSIVE
+ * ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .header-cta-btn {
+    display: none;
+  }
+}

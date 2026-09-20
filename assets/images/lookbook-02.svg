@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lb2Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="60%" stop-color="#F2EDE4"/>
+      <stop offset="100%" stop-color="#EAE5DB"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#lb2Bg)"/>
+  <rect x="30" y="30" width="540" height="740" fill="none" stroke="#DCD6CA" stroke-width="1"/>
+
+  <!-- Minimalist Figure Editorial: Look 02 (Tactile Layers) -->
+  <ellipse cx="300" cy="190" rx="24" ry="32" fill="#E8DED1"/>
+  <path d="M280 170 C280 140, 320 140, 320 170 C320 210, 310 230, 305 240 L295 240 C290 230, 280 210, 280 170 Z" fill="#2C2A29"/>
+  <line x1="300" y1="222" x2="300" y2="250" stroke="#E8DED1" stroke-width="8"/>
+
+  <!-- Boxy Tee / Top -->
+  <path d="M245 270 L285 250 L315 250 L355 270 L370 340 L345 350 L340 310 L340 430 L260 430 L260 310 L255 350 L230 340 Z" fill="#FFFFFF" stroke="#DCD6CA" stroke-width="1.5"/>
+
+  <!-- Pleated Trousers (Charcoal) -->
+  <rect x="260" y="425" width="80" height="15" fill="#2C2A29"/>
+  <path d="M260 440 L245 680 L290 680 L300 520 L310 680 L355 680 L340 440 Z" fill="#2C2A29" stroke="#181716" stroke-width="1.5"/>
+
+  <!-- Minimalist Sandals -->
+  <rect x="240" y="680" width="22" height="10" rx="2" fill="#181716"/>
+  <rect x="338" y="680" width="22" height="10" rx="2" fill="#181716"/>
+
+  <text x="50" y="730" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#6E665E" letter-spacing="3">LOOK 02</text>
+  <text x="50" y="750" font-family="'Playfair Display', serif" font-size="16" font-style="italic" fill="#181716">Tactile Layers</text>
+</svg>

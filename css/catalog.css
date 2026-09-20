@@ -1,0 +1,460 @@
+/**
+ * ==============================================================================
+ * FEATURED DRESS CATALOG STYLES (css/catalog.css)
+ * ==============================================================================
+ * Luxury fashion boutique catalog grid, category filter tabs,
+ * editorial product cards, WhatsApp inquiry action, and quick-details modal.
+ * ==============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+ * 1. SECTION WRAPPER
+ * ---------------------------------------------------------------------------- */
+.catalog-section {
+  position: relative;
+  padding-block: var(--space-section);
+  background-color: var(--color-bg-alt);
+}
+
+/* ----------------------------------------------------------------------------
+ * 2. CATEGORY FILTER TABS
+ * ---------------------------------------------------------------------------- */
+.catalog-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+}
+
+.filter-btn {
+  padding: 0.6rem 1.35rem;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.filter-btn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-btn.is-active {
+  color: var(--color-primary);
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-weight: var(--fw-semibold);
+}
+
+/* ----------------------------------------------------------------------------
+ * 3. PRODUCT CATALOG GRID (DESKTOP)
+ * ---------------------------------------------------------------------------- */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.75rem, 1.25rem + 1.5vw, 2.75rem);
+}
+
+/* ----------------------------------------------------------------------------
+ * 4. EDITORIAL PRODUCT CARD
+ * ---------------------------------------------------------------------------- */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-accent);
+}
+
+/* Hidden state during filtering */
+.product-card.is-hidden {
+  display: none;
+}
+
+/* Card Media / Image Presentation */
+.product-media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: var(--color-bg-alt);
+  overflow: hidden;
+}
+
+.product-media-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-border-light);
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color var(--transition-base);
+}
+
+.product-card:hover .product-media-wrap::after {
+  border-color: var(--color-border-accent);
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.04);
+}
+
+/* Top Floating Badges */
+.product-badge-wrap {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.product-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.625rem;
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-xs);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.product-badge.badge-accent {
+  background-color: rgba(28, 25, 23, 0.85);
+  color: var(--color-accent);
+  border: 1px solid rgba(197, 168, 128, 0.5);
+}
+
+.product-badge.badge-new {
+  background-color: rgba(28, 25, 23, 0.9);
+  color: #FFFFFF;
+}
+
+.product-badge.badge-sale {
+  background-color: rgba(153, 27, 27, 0.9);
+  color: #FFFFFF;
+}
+
+.product-availability {
+  font-size: 0.625rem;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  color: #FAF8F5;
+  background-color: rgba(20, 18, 16, 0.65);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-xs);
+}
+
+/* Quick View Trigger on Hover */
+.product-quick-view-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-xs);
+  padding: 0.55rem 1.25rem;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+  cursor: pointer;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.product-card:hover .product-quick-view-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.product-quick-view-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+/* ----------------------------------------------------------------------------
+ * 5. PRODUCT CARD INFORMATION & ACTIONS
+ * ---------------------------------------------------------------------------- */
+.product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category-tag {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+  color: var(--color-accent);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 0.35rem;
+}
+
+.product-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.product-desc {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  font-weight: var(--fw-light);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Pricing Display */
+.product-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-bottom: 1.25rem;
+}
+
+.product-current-price {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  letter-spacing: var(--ls-tight);
+}
+
+.product-original-price {
+  font-size: var(--fs-sm);
+  color: var(--color-text-light);
+  text-decoration: line-through;
+}
+
+/* WhatsApp Inquiry CTA Button */
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn-product-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-xs);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.btn-product-whatsapp:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-product-whatsapp svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ----------------------------------------------------------------------------
+ * 6. PRODUCT QUICK-VIEW DETAILS MODAL
+ * ---------------------------------------------------------------------------- */
+.product-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 18, 16, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.product-modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.product-modal {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-accent);
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transform: scale(0.96) translateY(12px);
+  transition: transform var(--transition-slow);
+}
+
+.product-modal-backdrop.is-active .product-modal {
+  transform: scale(1) translateY(0);
+}
+
+.product-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-border-light);
+  background: var(--color-bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.product-modal-close:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.product-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.product-modal-media {
+  background-color: var(--color-bg-dark);
+  position: relative;
+  min-height: 380px;
+}
+
+.product-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-modal-body {
+  padding: clamp(1.5rem, 1.25rem + 1.5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-modal-specs {
+  margin-block: 1.25rem;
+  padding-block: 1rem;
+  border-block: 1px solid var(--color-border-light);
+  font-size: var(--fs-xs);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.product-modal-specs strong {
+  color: var(--color-primary);
+}
+
+/* ----------------------------------------------------------------------------
+ * 7. RESPONSIVE MEDIA QUERIES (TABLET & MOBILE)
+ * ---------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .product-quick-view-btn {
+    display: none; /* Show direct modal action on mobile if needed */
+  }
+
+  .product-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-modal-media {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .product-info {
+    padding: 1.25rem;
+  }
+
+  .catalog-filters {
+    gap: 0.4rem;
+  }
+
+  .filter-btn {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.6875rem;
+  }
+}

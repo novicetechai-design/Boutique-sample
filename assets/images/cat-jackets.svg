@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="catJacketsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F2EDE4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#catJacketsBg)"/>
+  <rect x="25" y="25" width="550" height="750" fill="none" stroke="#EAE5DB" stroke-width="1"/>
+
+  <!-- Minimalist Hanger Detail -->
+  <path d="M260 140 C260 115, 340 115, 340 140 C340 155, 300 160, 300 175" fill="none" stroke="#6E665E" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="180" y1="210" x2="420" y2="210" stroke="#6E665E" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Canvas Utility Jacket -->
+  <!-- Main Jacket Body -->
+  <path d="M190 210 L250 190 L350 190 L410 210 L455 370 L405 385 L390 280 L390 550 L210 550 L210 280 L195 385 L145 370 Z" fill="#DCD6CA" stroke="#BCB4A6" stroke-width="1.5"/>
+  
+  <!-- Jacket Collar -->
+  <path d="M250 190 L300 230 L350 190 L335 175 L265 175 Z" fill="#C8C0B2" stroke="#A89E90" stroke-width="1.5"/>
+
+  <!-- Front Placket -->
+  <line x1="300" y1="230" x2="300" y2="550" stroke="#BCB4A6" stroke-width="2"/>
+  
+  <!-- Horn Buttons -->
+  <circle cx="300" cy="270" r="4.5" fill="#181716"/>
+  <circle cx="300" cy="335" r="4.5" fill="#181716"/>
+  <circle cx="300" cy="400" r="4.5" fill="#181716"/>
+  <circle cx="300" cy="465" r="4.5" fill="#181716"/>
+
+  <!-- Oversized Utility Patch Pockets -->
+  <rect x="225" y="380" width="60" height="70" fill="#D4CCC0" stroke="#BCB4A6" stroke-width="1.2" rx="2"/>
+  <path d="M225 380 L255 395 L285 380" fill="none" stroke="#BCB4A6" stroke-width="1.2"/>
+  
+  <rect x="315" y="380" width="60" height="70" fill="#D4CCC0" stroke="#BCB4A6" stroke-width="1.2" rx="2"/>
+  <path d="M315 380 L345 395 L375 380" fill="none" stroke="#BCB4A6" stroke-width="1.2"/>
+
+  <!-- Category Label Text -->
+  <text x="300" y="690" font-family="'Playfair Display', serif" font-size="22" font-weight="600" fill="#181716" text-anchor="middle" letter-spacing="2">JACKETS</text>
+  <text x="300" y="715" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#6E665E" text-anchor="middle" letter-spacing="3">TRANSITIONAL LAYERS • 8 STYLES</text>
+</svg>
