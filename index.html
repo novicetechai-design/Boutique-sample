@@ -24,6 +24,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/page-transition.css">
 </head>
 <body class="brand-anyface">
 
@@ -70,6 +71,40 @@
                 <path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
+            <div class="nav-dropdown" role="menu">
+              <a href="collections/shirts.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+                </span>
+                Shirts
+              </a>
+              <a href="collections/tshirts.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+                </span>
+                T-Shirts
+              </a>
+              <a href="collections/denim.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h12l1 10H5L6 2z"/><path d="M5 12l1 10h5l1-6 1 6h5l1-10"/></svg>
+                </span>
+                Denim
+              </a>
+              <a href="collections/trousers.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h12l1 10H5L6 2z"/><path d="M5 12l1 10h5l1-6 1 6h5l1-10"/></svg>
+                </span>
+                Trousers
+              </a>
+              <a href="collections/outerwear.html" class="nav-dropdown-item" role="menuitem">
+                <span class="dropdown-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 8v4l3 3"/></svg>
+                </span>
+                Outerwear
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#collections" class="nav-dropdown-item nav-dropdown-all" role="menuitem">View All Collections →</a>
+            </div>
           </li>
           <li><a href="#about" class="nav-link magnetic-target">ABOUT</a></li>
           <li><a href="#journal" class="nav-link magnetic-target">JOURNAL</a></li>
@@ -127,11 +162,19 @@
 
     <nav class="drawer-nav" aria-label="Mobile Navigation">
       <ul class="drawer-nav-list">
-        <li><a href="#top" class="drawer-link active">HOME</a></li>
-        <li><a href="#collections" class="drawer-link">COLLECTIONS</a></li>
+        <li><a href="index.html" class="drawer-link active">HOME</a></li>
+        <li class="drawer-has-sub">
+          <button class="drawer-link drawer-collapsible" aria-expanded="false">COLLECTIONS <svg class="drawer-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1L5 5L9 1" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="drawer-sub-list">
+            <li><a href="collections/shirts.html" class="drawer-sub-link">Shirts</a></li>
+            <li><a href="collections/tshirts.html" class="drawer-sub-link">T-Shirts</a></li>
+            <li><a href="collections/denim.html" class="drawer-sub-link">Denim</a></li>
+            <li><a href="collections/trousers.html" class="drawer-sub-link">Trousers</a></li>
+            <li><a href="collections/outerwear.html" class="drawer-sub-link">Outerwear</a></li>
+          </ul>
+        </li>
         <li><a href="#about" class="drawer-link">ABOUT</a></li>
         <li><a href="#journal" class="drawer-link">JOURNAL</a></li>
-        <li><a href="#curated-fashion" class="drawer-link">CURATED</a></li>
         <li><a href="#contact" class="drawer-link">CONTACT</a></li>
       </ul>
     </nav>
@@ -262,18 +305,14 @@
               </div>
             </div>
 
-            <!-- Layer 4: Floating golden light particle motes overlay -->
+            <!-- Layer 4: Subtle ambient depth overlay -->
             <div class="depth-layer depth-layer-particles" data-depth="0.14">
-              <div class="floating-gold-dust"></div>
+              <div class="hero-ambient-overlay"></div>
             </div>
 
           </div>
 
-          <!-- Vertical Editorial Side Labels matching screenshot -->
-          <div class="hero-side-typography" aria-hidden="true">
-            <span class="hero-side-season">SPRING / SUMMER 24</span>
-            <span class="hero-side-counter">01 / 04</span>
-          </div>
+
 
         </div>
 
@@ -303,7 +342,7 @@
         <div class="collections-grid-5" id="collections-grid">
           
           <!-- 1. SHIRTS -->
-          <div class="collection-card-3d" data-tilt data-card-title="SHIRTS">
+          <a href="collections/shirts.html" class="collection-card-3d" data-tilt data-card-title="SHIRTS" style="text-decoration:none;display:block;">
             <div class="card-inner">
               <div class="card-media">
                 <img src="assets/images/cat-shirts.jpg" alt="Any Face Can Fit Shirts Collection" class="card-img" loading="lazy">
@@ -315,10 +354,10 @@
                 <div class="card-gold-line"></div>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- 2. T-SHIRTS -->
-          <div class="collection-card-3d" data-tilt data-card-title="T-SHIRTS">
+          <a href="collections/tshirts.html" class="collection-card-3d" data-tilt data-card-title="T-SHIRTS" style="text-decoration:none;display:block;">
             <div class="card-inner">
               <div class="card-media">
                 <img src="assets/images/cat-tshirts.jpg" alt="Any Face Can Fit T-Shirts Collection" class="card-img" loading="lazy">
@@ -330,10 +369,10 @@
                 <div class="card-gold-line"></div>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- 3. DENIM -->
-          <div class="collection-card-3d" data-tilt data-card-title="DENIM">
+          <a href="collections/denim.html" class="collection-card-3d" data-tilt data-card-title="DENIM" style="text-decoration:none;display:block;">
             <div class="card-inner">
               <div class="card-media">
                 <img src="assets/images/cat-denim.jpg" alt="Any Face Can Fit Denim Collection" class="card-img" loading="lazy">
@@ -345,10 +384,10 @@
                 <div class="card-gold-line"></div>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- 4. TROUSERS -->
-          <div class="collection-card-3d" data-tilt data-card-title="TROUSERS">
+          <a href="collections/trousers.html" class="collection-card-3d" data-tilt data-card-title="TROUSERS" style="text-decoration:none;display:block;">
             <div class="card-inner">
               <div class="card-media">
                 <img src="assets/images/cat-trousers.jpg" alt="Any Face Can Fit Trousers Collection" class="card-img" loading="lazy">
@@ -360,10 +399,10 @@
                 <div class="card-gold-line"></div>
               </div>
             </div>
-          </div>
+          </a>
 
           <!-- 5. OUTERWEAR -->
-          <div class="collection-card-3d" data-tilt data-card-title="OUTERWEAR">
+          <a href="collections/outerwear.html" class="collection-card-3d" data-tilt data-card-title="OUTERWEAR" style="text-decoration:none;display:block;">
             <div class="card-inner">
               <div class="card-media">
                 <img src="assets/images/cat-outerwear.jpg" alt="Any Face Can Fit Outerwear Collection" class="card-img" loading="lazy">
@@ -375,7 +414,7 @@
                 <div class="card-gold-line"></div>
               </div>
             </div>
-          </div>
+          </a>
 
         </div>
 
@@ -658,28 +697,23 @@
           </ul>
         </div>
 
-        <!-- Column: Motto & Botanical Artwork -->
+        <!-- Column: Motto -->
         <div class="footer-col-motto">
           <p class="footer-motto-text">Designed with purpose.<br>Made with care.</p>
+          <div class="footer-botanical-inline" aria-hidden="true">
+            <svg width="80" height="72" viewBox="0 0 80 72" fill="none" stroke="#C6A15B" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+              <path d="M40 70 C40 50, 30 35, 20 25"/>
+              <path d="M20 25 C15 15, 18 5, 28 3 C38 1, 46 10, 42 22"/>
+              <path d="M42 22 C50 8, 62 4, 68 12 C74 20, 68 32, 55 36 C48 38, 42 40, 40 70"/>
+              <path d="M30 42 C20 38, 10 44, 8 54 C6 62, 16 68, 28 62"/>
+              <path d="M50 38 C60 34, 70 40, 72 50 C74 58, 64 66, 52 62"/>
+            </svg>
+          </div>
         </div>
 
       </div>
 
-      <!-- Delicate Botanical Floral Gold Line Art Illustration (Corner) -->
-      <div class="footer-botanical-art" aria-hidden="true">
-        <svg width="220" height="200" viewBox="0 0 220 200" fill="none" stroke="#C6A15B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45">
-          <!-- Flower 1 -->
-          <path d="M180 180 C180 140, 160 110, 130 90"/>
-          <path d="M130 90 C120 70, 125 50, 140 40 C155 30, 175 40, 180 60 C185 40, 205 30, 220 40 C235 50, 240 70, 230 90 C210 110, 190 140, 180 180 Z"/>
-          <!-- Flower 2 & Leaves -->
-          <path d="M150 130 C130 120, 110 130, 105 145 C100 160, 115 170, 135 165 C150 160, 155 145, 150 130 Z"/>
-          <path d="M165 105 C185 95, 200 105, 205 120 C210 135, 195 145, 180 140 C165 135, 160 120, 165 105 Z"/>
-          <!-- Stems and delicate sprigs -->
-          <path d="M190 190 C190 160, 180 130, 160 110"/>
-          <path d="M140 150 C120 150, 95 160, 85 175 C75 190, 90 200, 110 195 C130 190, 135 170, 140 150 Z"/>
-          <path d="M175 170 C160 180, 150 195, 155 205"/>
-        </svg>
-      </div>
+
 
       <!-- Copyright Bottom Bar -->
       <div class="footer-bottom-bar">
@@ -694,5 +728,16 @@
        ======================================================================== -->
   <script src="js/three-scene.js"></script>
   <script src="js/interactions-3d.js"></script>
+  <script>
+    // Mobile drawer collapsible sub-menus
+    document.querySelectorAll('.drawer-collapsible').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const parent = btn.closest('.drawer-has-sub');
+        const isOpen = parent.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+  </script>
+  <script src="js/page-transition.js"></script>
 </body>
 </html>
